@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Corporation Food Hall Restroom Code</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#1f1f1f;
+    background-image:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,.04), transparent 25%),
+    radial-gradient(circle at 80% 30%, rgba(255,255,255,.03), transparent 30%),
+    linear-gradient(#2d2d2d,#1b1b1b);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.card{
+    width:90%;
+    max-width:500px;
+    text-align:center;
+    padding:40px;
+    border-radius:20px;
+    background:rgba(0,0,0,.35);
+    backdrop-filter:blur(8px);
+    box-shadow:0 20px 40px rgba(0,0,0,.45);
+}
+
+h1{
+    margin:0;
+    font-size:36px;
+}
+
+.subtitle{
+    margin-top:10px;
+    color:#bbbbbb;
+    font-size:18px;
+}
+
+#code{
+    margin:40px 0;
+    font-size:80px;
+    font-weight:bold;
+    letter-spacing:8px;
+    color:#ffffff;
+}
+
+.footer{
+    color:#999;
+    font-size:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>🚻 Restroom Code</h1>
+
+<div class="subtitle" id="today"></div>
+
+<div id="code">----</div>
+
+<div class="footer">
+Customers Only<br><br>
+Corporation Food Hall
+</div>
+
+</div>
+
+<script>
+
+const codes = {
+0:"1111", // Sunday
+1:"2222", // Monday
+2:"3333", // Tuesday
+3:"4444", // Wednesday
+4:"5555", // Thursday
+5:"6666", // Friday
+6:"7777"  // Saturday
+};
+
+const days=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+const today=new Date();
+
+document.getElementById("today").innerHTML=days[today.getDay()];
+
+document.getElementById("code").innerHTML=codes[today.getDay()];
+
+</script>
+
+</body>
+</html>
